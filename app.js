@@ -4,18 +4,25 @@
   angular.module('LunchCheck', []);
 
   .controller('LunchCheckController', LunchCheckController);
-   .$inject=['$scope'];
-   Function LunchCheckController($scope) {
-    var splitwords=$scope.text;
+   LunchCheckController.$inject=['$scope'];
+   function LunchCheckController($scope) {
+    $scope.name="";
+    $scope.wordssum=0;
+
     $scope.wordcounter= function() {
 
+    var splitedwords=calculatewordcounter($scope.name);
+    $scope.wordssum=splitedwords;
 
-    splitwords=splitwords.split(,).length;
+  };
+  function calculatewordcounter(string)
+  {
 
-    }
+  var totalwordsvalue=0;
+  totalwordsvalue=string.split(,).length;
+  }
 
-
-
+  return totalwordsvalue;
   });
 
 })();
