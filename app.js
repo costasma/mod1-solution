@@ -9,6 +9,7 @@
     $scope.name="";
     $scope.wordssum=0;
     $scope.message="";
+    $scope.customstyle={};
     $scope.wordcounter= function() {
 
     var splitedwords=calculatewordcounter($scope.name);
@@ -18,12 +19,15 @@
 
     if (wordssum <=3 ){
       $scope.message="Enjoy!";
+      $scope.customstyle.style={"color":"green"};
     }
     else  {
       $scope.message="Too much!";
+      $scope.customstyle.style={"color":"red"};
     }
     if (wordssum ==0 ){
       $scope.message="Please enter data first!";
+      $scope.customstyle.style={"color":"black"};
     }
 
   };
